@@ -1,10 +1,13 @@
 # SyncFlow Customer Success API
 
-![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat-square&logo=python)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688?style=flat-square&logo=fastapi)
-![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-6BA539?style=flat-square&logo=openapi-initiative)
-![Hackathon](https://img.shields.io/badge/Hackathon%205-Stage%202-orange?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat-square)
+![Python](https://img.shields.io/badge/Python-3.9+-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![OpenAPI](https://img.shields.io/badge/OpenAPI-Swagger-orange)
+![Hackathon](https://img.shields.io/badge/Hackathon-5-purple)
+![Stage](https://img.shields.io/badge/Stage-2-success)
+![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-blue)
+![Maintained](https://img.shields.io/badge/Maintained-Yes-success)
 
 ---
 
@@ -106,34 +109,33 @@ All Stage 1 artifacts (prototype agent, MCP server, context datasets, escalation
 
 ## Architecture Diagram
 
-```
-  Support Channels (Web Form / Email / WhatsApp)
-                    |
-                    v
-           FastAPI Backend API
-            (backend/main.py)
-                    |
-                    v
-       Message Processing Pipeline
-        (workers/message_worker.py)
-                    |
-         -----------+-----------
-         |          |           |
-         v          v           v
-    AI Agent    CRM Layer   Metrics &
-    (bridge)   (tickets,   Analytics
-               customers)  (events)
-         |          |
-         v          v
-    Escalation   Ticket
-    Queue        Lifecycle
-    Routing      + SLA
-         |
-         v
-  Human Agent Queues
-  (legal / billing / security /
-   sales / enterprise / senior-support /
-   technical / csm-retention)
+```mermaid
+flowchart TD
+
+A[Support Channels<br>Web Form / Email / WhatsApp] --> B[FastAPI Backend API]
+B --> C[Message Processing Pipeline]
+
+C --> D[AI Support Agent]
+C --> E[CRM Layer]
+C --> F[Metrics & Analytics]
+
+E --> G[Ticket Lifecycle]
+E --> H[Customer Records]
+
+D --> I[Escalation Routing]
+
+I --> J[Human Agent Queues<br>Legal / Billing / Security / Sales / Enterprise]
+
+style A fill:#dbeafe,stroke:#1e3a8a,stroke-width:2px
+style B fill:#dcfce7,stroke:#166534,stroke-width:2px
+style C fill:#fef3c7,stroke:#92400e,stroke-width:2px
+style D fill:#e9d5ff,stroke:#6b21a8,stroke-width:2px
+style E fill:#fce7f3,stroke:#9d174d,stroke-width:2px
+style F fill:#cffafe,stroke:#155e75,stroke-width:2px
+style G fill:#fde68a
+style H fill:#fde68a
+style I fill:#fecaca
+style J fill:#fecaca
 ```
 
 ---
