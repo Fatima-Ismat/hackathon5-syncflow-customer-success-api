@@ -24,6 +24,14 @@ NovaSync Technologies | SyncFlow Customer Success Digital FTE
 
 ---
 
+## 🎥 Stage 2 Demo Video
+
+[![Watch the Stage 2 Demo](https://img.youtube.com/vi/_XYQGFO3ruk/maxresdefault.jpg)](https://www.youtube.com/watch?v=_XYQGFO3ruk)
+
+Watch the Stage 2 demo video showing the FastAPI backend, AI support agent pipeline, CRM layer, and multi-channel support processing.
+
+---
+
 ## Project Overview
 
 SyncFlow Customer Success API is a **production-ready FastAPI backend** for an AI-assisted customer support system. It functions as a **Digital Full-Time Employee (Digital FTE)** — an AI agent that autonomously receives, processes, and resolves inbound customer support requests across multiple channels.
